@@ -5,76 +5,107 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    #region VARIABLES
     // Declaration
-    public enum State
+    public enum State // The behaviour states of the enemy AI.
     {
         Patrol = 0,
         Seek = 1
     }
 
-    public State currentState = State.Patrol;
-    public NavMeshAgent agent;
-    public Transform target;
-    public float seekRadius = 5f;
+    public State currentState = State.Patrol; // The default/start state set to Patrol.
+    public NavMeshAgent agent; // Unity component reference
+    public Transform target; // Reference assigned target's Transform data (position/rotation/scale).
 
-    public Transform waypointParent;
-    public float moveSpeed;
-    public float stoppingDistance = 1f;
+    public float seekRadius = 5f; // IMPORTANT: CHANGE ENEMY'S PLAYER DETECTION METHOD!
+
+    public Transform waypointParent; // Reference one waypoint Parent (used to get children in array).
+    public float moveSpeed; // Enemy AI's movement speed.
+    public float stoppingDistance = 1f; // Enemy AI's required distance to clear/'pass' a waypoint.
 
     // Creates a collection of Transforms
-    private Transform[] waypoints;
-    private int currentIndex = 1;
+    private Transform[] waypoints; // Transform of (child) waypoints in array.
+    private int currentIndex = 1; // Counts sequential waypoints of array index.
+    #endregion VARIABLES
 
-    // CTRL + M + O (Fold Code)
-    // CTRL + M + P (UnFold Code)
-
+    #region STATE - Patrol
+    // The contained variables for the Patrol state (what rules the enemy AI follows when in 'Patrol').
     void Patrol()
     {
+        // Transform(s) of each waypoint in the array.
         Transform point = waypoints[currentIndex];
 
+        // Gets the distance between enemy and waypoint.
         float distance = Vector3.Distance(transform.position, point.position);
+
+        // if statement reads as:
+        /*
+         *  if the enemy AI's distance is less than 0.5...
+         *      add +1 to currentIndex (move to next waypoint in array).
+         *      if enemy AI clears the final waypoint in array...
+         *          reset currentIndex to 1 (return/repeat cycle).
+        */
         if (distance < .5f)
         {
-            // currentIndex = currentIndex + 1
             currentIndex++;
             if (currentIndex >= waypoints.Length)
             {
                 currentIndex = 1;
             }
         }
-        agent.SetDestination(point.position);
+        agent.SetDestination(point.position); // (NavMeshAgent) agent move to the Transform position of current waypoint.
 
-
+        // Gets the distance between enemy and player.
         float distToTarget = Vector3.Distance(transform.position, target.position);
+
+        // if statement reads as:
+        /*
+         *  if the distance betweeen enemy/player is less than 5f (seekRadius)...
+         *      switch current State from 'Patrol' to 'Seek' (start pursuing player).
+        */
         if (distToTarget < seekRadius)
         {
             currentState = State.Seek;
         }
     }
+    #endregion STATE - Patrol
 
+    #region STATE - Seek
+    // The contained variables for the Seek state (what rules the enemy AI follows when in 'Seek').
     void Seek()
     {
-        agent.SetDestination(target.position);
+        agent.SetDestination(target.position); // (NavMeshAgent) agent move to the Transform position of the player.
+
+        // Gets the distance between enemy and player.
         float distToTarget = Vector3.Distance(transform.position, target.position);
+
+        // if statement reads as:
+        /*
+         *  if the distance betweeen enemy/player is greater than 5f (seekRadius)...
+         *      switch current State from 'Seek' to 'Patrol' (resume moving from waypoint to waypoint).
+        */
         if (distToTarget > seekRadius)
         {
             currentState = State.Patrol;
         }
     }
+    #endregion STATE - Seek
 
+    #region Start
     // Use this for initialization
     void Start()
     {
-
-        // Getting children of waypointParent
+        // Get children of waypointParent.
         waypoints = waypointParent.GetComponentsInChildren<Transform>();
     }
+    #endregion Start
 
+    #region Update
     // Update is called once per frame
     void Update()
     {
         // Switch current state
-        switch (currentState) //swi - Tab 2x , type 'currentState', then down arrow.
+        switch (currentState)
         {
             case State.Patrol:
                 // Patrol state
@@ -87,9 +118,10 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
-            // If we are in Patrol
+            // If we are in Patrol State...
                 // Call Patrol()
-            // If we are in Seek
+            // If we are in Seek State...
                 // Call Seek()
     }
+    #endregion Update
 }
