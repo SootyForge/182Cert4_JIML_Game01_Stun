@@ -1,0 +1,534 @@
+fileFormatVersion: 2
+guid: f285363a3ed6a25408e07021612e5aa9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Geo_Doorway001
+    100002: Geo_Doorway002
+    100004: Geo_Doorway003
+    100006: Geo_Doorway004
+    100008: Geo_Doorway005
+    100010: Geo_Doorway006
+    100012: Geo_Doorway007
+    100014: Geo_Doorway008
+    100016: Geo_Doorway009
+    100018: Geo_Doorway010
+    100020: Geo_Doorway011
+    100022: Geo_Doorway012
+    100024: Geo_Doorway013
+    100026: Geo_Doorway014
+    100028: Geo_Doorway015
+    100030: Geo_Doorway016
+    100032: Geo_Doorway017
+    100034: Geo_Doorway018
+    100036: Geo_innerWall001
+    100038: Geo_innerWall002
+    100040: Geo_innerWall003
+    100042: Geo_innerWall004
+    100044: Geo_innerWall005
+    100046: Geo_innerWall006
+    100048: Geo_innerWall007
+    100050: Geo_innerWall008
+    100052: Geo_innerWall009
+    100054: Geo_innerWall010
+    100056: Geo_innerWall011
+    100058: Geo_innerWall012
+    100060: Geo_innerWall013
+    100062: Geo_innerWall014
+    100064: Geo_innerWall015
+    100066: Geo_innerWall016
+    100068: Geo_innerWall017
+    100070: Geo_innerWall018
+    100072: Geo_innerWall019
+    100074: Geo_innerWall020
+    100076: Geo_innerWall021
+    100078: Geo_innerWall022
+    100080: Geo_innerWall023
+    100082: Geo_innerWall024
+    100084: Geo_innerWall025
+    100086: Geo_innerWall026
+    100088: Geo_innerWall027
+    100090: Geo_innerWall028
+    100092: Geo_innerWall029
+    100094: Geo_innerWall030
+    100096: Geo_innerWall031
+    100098: Geo_innerWall032
+    100100: //RootNode
+    100102: Geo_outerWalls
+    100104: Grp_Geo_Ceiling
+    100106: Grp_Geo_Doorways
+    100108: Grp_Geo_Floor
+    100110: Grp_Geo_innerWalls
+    100112: pPlane1
+    100114: pPlane1 1
+    100116: pPlane10
+    100118: pPlane10 1
+    100120: pPlane11
+    100122: pPlane11 1
+    100124: pPlane12
+    100126: pPlane12 1
+    100128: pPlane13
+    100130: pPlane13 1
+    100132: pPlane14
+    100134: pPlane14 1
+    100136: pPlane15
+    100138: pPlane15 1
+    100140: pPlane16
+    100142: pPlane16 1
+    100144: pPlane17
+    100146: pPlane17 1
+    100148: pPlane18
+    100150: pPlane18 1
+    100152: pPlane2
+    100154: pPlane2 1
+    100156: pPlane3
+    100158: pPlane3 1
+    100160: pPlane4
+    100162: pPlane4 1
+    100164: pPlane5
+    100166: pPlane5 1
+    100168: pPlane6
+    100170: pPlane6 1
+    100172: pPlane7
+    100174: pPlane7 1
+    100176: pPlane8
+    100178: pPlane8 1
+    100180: pPlane9
+    100182: pPlane9 1
+    400000: Geo_Doorway001
+    400002: Geo_Doorway002
+    400004: Geo_Doorway003
+    400006: Geo_Doorway004
+    400008: Geo_Doorway005
+    400010: Geo_Doorway006
+    400012: Geo_Doorway007
+    400014: Geo_Doorway008
+    400016: Geo_Doorway009
+    400018: Geo_Doorway010
+    400020: Geo_Doorway011
+    400022: Geo_Doorway012
+    400024: Geo_Doorway013
+    400026: Geo_Doorway014
+    400028: Geo_Doorway015
+    400030: Geo_Doorway016
+    400032: Geo_Doorway017
+    400034: Geo_Doorway018
+    400036: Geo_innerWall001
+    400038: Geo_innerWall002
+    400040: Geo_innerWall003
+    400042: Geo_innerWall004
+    400044: Geo_innerWall005
+    400046: Geo_innerWall006
+    400048: Geo_innerWall007
+    400050: Geo_innerWall008
+    400052: Geo_innerWall009
+    400054: Geo_innerWall010
+    400056: Geo_innerWall011
+    400058: Geo_innerWall012
+    400060: Geo_innerWall013
+    400062: Geo_innerWall014
+    400064: Geo_innerWall015
+    400066: Geo_innerWall016
+    400068: Geo_innerWall017
+    400070: Geo_innerWall018
+    400072: Geo_innerWall019
+    400074: Geo_innerWall020
+    400076: Geo_innerWall021
+    400078: Geo_innerWall022
+    400080: Geo_innerWall023
+    400082: Geo_innerWall024
+    400084: Geo_innerWall025
+    400086: Geo_innerWall026
+    400088: Geo_innerWall027
+    400090: Geo_innerWall028
+    400092: Geo_innerWall029
+    400094: Geo_innerWall030
+    400096: Geo_innerWall031
+    400098: Geo_innerWall032
+    400100: //RootNode
+    400102: Geo_outerWalls
+    400104: Grp_Geo_Ceiling
+    400106: Grp_Geo_Doorways
+    400108: Grp_Geo_Floor
+    400110: Grp_Geo_innerWalls
+    400112: pPlane1
+    400114: pPlane1 1
+    400116: pPlane10
+    400118: pPlane10 1
+    400120: pPlane11
+    400122: pPlane11 1
+    400124: pPlane12
+    400126: pPlane12 1
+    400128: pPlane13
+    400130: pPlane13 1
+    400132: pPlane14
+    400134: pPlane14 1
+    400136: pPlane15
+    400138: pPlane15 1
+    400140: pPlane16
+    400142: pPlane16 1
+    400144: pPlane17
+    400146: pPlane17 1
+    400148: pPlane18
+    400150: pPlane18 1
+    400152: pPlane2
+    400154: pPlane2 1
+    400156: pPlane3
+    400158: pPlane3 1
+    400160: pPlane4
+    400162: pPlane4 1
+    400164: pPlane5
+    400166: pPlane5 1
+    400168: pPlane6
+    400170: pPlane6 1
+    400172: pPlane7
+    400174: pPlane7 1
+    400176: pPlane8
+    400178: pPlane8 1
+    400180: pPlane9
+    400182: pPlane9 1
+    2100000: lambert1
+    2300000: Geo_Doorway001
+    2300002: Geo_Doorway002
+    2300004: Geo_Doorway003
+    2300006: Geo_Doorway004
+    2300008: Geo_Doorway005
+    2300010: Geo_Doorway006
+    2300012: Geo_Doorway007
+    2300014: Geo_Doorway008
+    2300016: Geo_Doorway009
+    2300018: Geo_Doorway010
+    2300020: Geo_Doorway011
+    2300022: Geo_Doorway012
+    2300024: Geo_Doorway013
+    2300026: Geo_Doorway014
+    2300028: Geo_Doorway015
+    2300030: Geo_Doorway016
+    2300032: Geo_Doorway017
+    2300034: Geo_Doorway018
+    2300036: Geo_innerWall001
+    2300038: Geo_innerWall002
+    2300040: Geo_innerWall003
+    2300042: Geo_innerWall004
+    2300044: Geo_innerWall005
+    2300046: Geo_innerWall006
+    2300048: Geo_innerWall007
+    2300050: Geo_innerWall008
+    2300052: Geo_innerWall009
+    2300054: Geo_innerWall010
+    2300056: Geo_innerWall011
+    2300058: Geo_innerWall012
+    2300060: Geo_innerWall013
+    2300062: Geo_innerWall014
+    2300064: Geo_innerWall015
+    2300066: Geo_innerWall016
+    2300068: Geo_innerWall017
+    2300070: Geo_innerWall018
+    2300072: Geo_innerWall019
+    2300074: Geo_innerWall020
+    2300076: Geo_innerWall021
+    2300078: Geo_innerWall022
+    2300080: Geo_innerWall023
+    2300082: Geo_innerWall024
+    2300084: Geo_innerWall025
+    2300086: Geo_innerWall026
+    2300088: Geo_innerWall027
+    2300090: Geo_innerWall028
+    2300092: Geo_innerWall029
+    2300094: Geo_innerWall030
+    2300096: Geo_innerWall031
+    2300098: Geo_innerWall032
+    2300100: Geo_outerWalls
+    2300102: pPlane1
+    2300104: pPlane1 1
+    2300106: pPlane10
+    2300108: pPlane10 1
+    2300110: pPlane11
+    2300112: pPlane11 1
+    2300114: pPlane12
+    2300116: pPlane12 1
+    2300118: pPlane13
+    2300120: pPlane13 1
+    2300122: pPlane14
+    2300124: pPlane14 1
+    2300126: pPlane15
+    2300128: pPlane15 1
+    2300130: pPlane16
+    2300132: pPlane16 1
+    2300134: pPlane17
+    2300136: pPlane17 1
+    2300138: pPlane18
+    2300140: pPlane18 1
+    2300142: pPlane2
+    2300144: pPlane2 1
+    2300146: pPlane3
+    2300148: pPlane3 1
+    2300150: pPlane4
+    2300152: pPlane4 1
+    2300154: pPlane5
+    2300156: pPlane5 1
+    2300158: pPlane6
+    2300160: pPlane6 1
+    2300162: pPlane7
+    2300164: pPlane7 1
+    2300166: pPlane8
+    2300168: pPlane8 1
+    2300170: pPlane9
+    2300172: pPlane9 1
+    3300000: Geo_Doorway001
+    3300002: Geo_Doorway002
+    3300004: Geo_Doorway003
+    3300006: Geo_Doorway004
+    3300008: Geo_Doorway005
+    3300010: Geo_Doorway006
+    3300012: Geo_Doorway007
+    3300014: Geo_Doorway008
+    3300016: Geo_Doorway009
+    3300018: Geo_Doorway010
+    3300020: Geo_Doorway011
+    3300022: Geo_Doorway012
+    3300024: Geo_Doorway013
+    3300026: Geo_Doorway014
+    3300028: Geo_Doorway015
+    3300030: Geo_Doorway016
+    3300032: Geo_Doorway017
+    3300034: Geo_Doorway018
+    3300036: Geo_innerWall001
+    3300038: Geo_innerWall002
+    3300040: Geo_innerWall003
+    3300042: Geo_innerWall004
+    3300044: Geo_innerWall005
+    3300046: Geo_innerWall006
+    3300048: Geo_innerWall007
+    3300050: Geo_innerWall008
+    3300052: Geo_innerWall009
+    3300054: Geo_innerWall010
+    3300056: Geo_innerWall011
+    3300058: Geo_innerWall012
+    3300060: Geo_innerWall013
+    3300062: Geo_innerWall014
+    3300064: Geo_innerWall015
+    3300066: Geo_innerWall016
+    3300068: Geo_innerWall017
+    3300070: Geo_innerWall018
+    3300072: Geo_innerWall019
+    3300074: Geo_innerWall020
+    3300076: Geo_innerWall021
+    3300078: Geo_innerWall022
+    3300080: Geo_innerWall023
+    3300082: Geo_innerWall024
+    3300084: Geo_innerWall025
+    3300086: Geo_innerWall026
+    3300088: Geo_innerWall027
+    3300090: Geo_innerWall028
+    3300092: Geo_innerWall029
+    3300094: Geo_innerWall030
+    3300096: Geo_innerWall031
+    3300098: Geo_innerWall032
+    3300100: Geo_outerWalls
+    3300102: pPlane1
+    3300104: pPlane1 1
+    3300106: pPlane10
+    3300108: pPlane10 1
+    3300110: pPlane11
+    3300112: pPlane11 1
+    3300114: pPlane12
+    3300116: pPlane12 1
+    3300118: pPlane13
+    3300120: pPlane13 1
+    3300122: pPlane14
+    3300124: pPlane14 1
+    3300126: pPlane15
+    3300128: pPlane15 1
+    3300130: pPlane16
+    3300132: pPlane16 1
+    3300134: pPlane17
+    3300136: pPlane17 1
+    3300138: pPlane18
+    3300140: pPlane18 1
+    3300142: pPlane2
+    3300144: pPlane2 1
+    3300146: pPlane3
+    3300148: pPlane3 1
+    3300150: pPlane4
+    3300152: pPlane4 1
+    3300154: pPlane5
+    3300156: pPlane5 1
+    3300158: pPlane6
+    3300160: pPlane6 1
+    3300162: pPlane7
+    3300164: pPlane7 1
+    3300166: pPlane8
+    3300168: pPlane8 1
+    3300170: pPlane9
+    3300172: pPlane9 1
+    4300000: Geo_outerWalls
+    4300002: pPlane18
+    4300004: pPlane17
+    4300006: pPlane16
+    4300008: pPlane15
+    4300010: pPlane14
+    4300012: pPlane13
+    4300014: pPlane12
+    4300016: pPlane11
+    4300018: pPlane10
+    4300020: pPlane9
+    4300022: pPlane8
+    4300024: pPlane7
+    4300026: pPlane6
+    4300028: pPlane5
+    4300030: pPlane4
+    4300032: pPlane3
+    4300034: pPlane2
+    4300036: pPlane1
+    4300038: pPlane18
+    4300040: pPlane17
+    4300042: pPlane16
+    4300044: pPlane15
+    4300046: pPlane14
+    4300048: pPlane13
+    4300050: pPlane12
+    4300052: pPlane11
+    4300054: pPlane10
+    4300056: pPlane9
+    4300058: pPlane8
+    4300060: pPlane7
+    4300062: pPlane6
+    4300064: pPlane5
+    4300066: pPlane4
+    4300068: pPlane3
+    4300070: pPlane2
+    4300072: pPlane1
+    4300074: Geo_Doorway001
+    4300076: Geo_Doorway002
+    4300078: Geo_Doorway003
+    4300080: Geo_Doorway004
+    4300082: Geo_Doorway005
+    4300084: Geo_Doorway006
+    4300086: Geo_Doorway007
+    4300088: Geo_Doorway008
+    4300090: Geo_Doorway009
+    4300092: Geo_Doorway010
+    4300094: Geo_Doorway011
+    4300096: Geo_Doorway012
+    4300098: Geo_Doorway013
+    4300100: Geo_Doorway014
+    4300102: Geo_Doorway015
+    4300104: Geo_Doorway016
+    4300106: Geo_Doorway017
+    4300108: Geo_Doorway018
+    4300110: Geo_innerWall001
+    4300112: Geo_innerWall002
+    4300114: Geo_innerWall003
+    4300116: Geo_innerWall004
+    4300118: Geo_innerWall005
+    4300120: Geo_innerWall006
+    4300122: Geo_innerWall007
+    4300124: Geo_innerWall008
+    4300126: Geo_innerWall009
+    4300128: Geo_innerWall010
+    4300130: Geo_innerWall011
+    4300132: Geo_innerWall012
+    4300134: Geo_innerWall013
+    4300136: Geo_innerWall014
+    4300138: Geo_innerWall015
+    4300140: Geo_innerWall016
+    4300142: Geo_innerWall017
+    4300144: Geo_innerWall018
+    4300146: Geo_innerWall019
+    4300148: Geo_innerWall020
+    4300150: Geo_innerWall021
+    4300152: Geo_innerWall022
+    4300154: Geo_innerWall023
+    4300156: Geo_innerWall024
+    4300158: Geo_innerWall025
+    4300160: Geo_innerWall026
+    4300162: Geo_innerWall027
+    4300164: Geo_innerWall028
+    4300166: Geo_innerWall029
+    4300168: Geo_innerWall030
+    4300170: Geo_innerWall031
+    4300172: Geo_innerWall032
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
