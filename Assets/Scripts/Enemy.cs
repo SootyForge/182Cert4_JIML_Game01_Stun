@@ -23,6 +23,9 @@ public class Enemy : MonoBehaviour
     public float moveSpeed; // Enemy AI's movement speed.
     public float stoppingDistance = 1f; // Enemy AI's required distance to clear/'pass' a waypoint.
 
+    public float pauseDuration; // Time to wait before going to the next waypoint.
+    private float curTime; // Defined later as UnityEngine 'Time.time'.
+
     // Creates a collection of Transforms
     private Transform[] waypoints; // Transform of (child) waypoints in array.
     private int currentIndex = 1; // Counts sequential waypoints of array index.
@@ -37,23 +40,38 @@ public class Enemy : MonoBehaviour
 
         // Gets the distance between enemy and waypoint.
         float distance = Vector3.Distance(transform.position, point.position);
-
+        #region if statement logic
         // if statement reads as:
         /*
-         *  if the enemy AI's distance is less than 0.5...
-         *      add +1 to currentIndex (move to next waypoint in array).
-         *      if enemy AI clears the final waypoint in array...
-         *          reset currentIndex to 1 (return/repeat cycle).
+         *  if the enemy AI's distance to the waypoint is less than 0.5...
+         *      and (&& breaks in previous argument) if curTime's equality is 0...
+         *          curTime = Time(using Unity Engine's time).time(get the time at beginning of this frame in seconds since the start of the game).
+         *      
+         *      if the time is greater than or equal to the pauseDuration...
+         *          add +1 to currentIndex (move to next waypoint in array).
+         *          reset curTime time to 0.
+         *          
+         *          if enemy AI clears the final waypoint in array...
+         *              reset currentIndex to 1 (return/repeat cycle).
         */
+        #endregion
         if (distance < .5f)
         {
-            currentIndex++;
-            if (currentIndex >= waypoints.Length)
+            if (curTime == 0)
+                curTime = Time.time;
+
+            if ((Time.time - curTime) >= pauseDuration)
             {
-                currentIndex = 1;
+                currentIndex++;
+                curTime = 0;
+
+                if (currentIndex >= waypoints.Length)
+                {
+                    currentIndex = 1;
+                }
             }
         }
-        agent.SetDestination(point.position); // (NavMeshAgent) agent move to the Transform position of current waypoint.
+        agent.SetDestination(point.position); // (NavMeshAgent) agent: move to the Transform position of current waypoint.
 
         // Gets the distance between enemy and player.
         float distToTarget = Vector3.Distance(transform.position, target.position);
@@ -118,10 +136,10 @@ public class Enemy : MonoBehaviour
             default:
                 break;
         }
-            // If we are in Patrol State...
-                // Call Patrol()
-            // If we are in Seek State...
-                // Call Seek()
+        // If we are in Patrol State...
+        // Call Patrol()
+        // If we are in Seek State...
+        // Call Seek()
     }
     #endregion Update
 }
