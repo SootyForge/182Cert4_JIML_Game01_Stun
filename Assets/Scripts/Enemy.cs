@@ -16,15 +16,13 @@ public class Enemy : MonoBehaviour
     public State currentState = State.Patrol; // The default/start state set to Patrol.
     public NavMeshAgent agent; // Unity component reference
     public Transform target; // Reference assigned target's Transform data (position/rotation/scale).
-
-    public float seekRadius = 5f; // IMPORTANT: CHANGE ENEMY'S PLAYER DETECTION METHOD!
+    public FieldOfView fov; // Reference FieldOfView Script (used for line of sight player detection).
 
     public Transform waypointParent; // Reference one waypoint Parent (used to get children in array).
-    public float moveSpeed; // Enemy AI's movement speed.
     public float stoppingDistance = 1f; // Enemy AI's required distance to clear/'pass' a waypoint.
 
     public float pauseDuration; // Time to wait before going to the next waypoint.
-    private float curTime; // Defined later as UnityEngine 'Time.time'.
+    private float waitTime, lookTime; // Defined later as UnityEngine 'Time.time'.
 
     // Creates a collection of Transforms
     private Transform[] waypoints; // Transform of (child) waypoints in array.
@@ -37,6 +35,7 @@ public class Enemy : MonoBehaviour
     {
         // Transform(s) of each waypoint in the array.
         Transform point = waypoints[currentIndex];
+        agent.speed = 3.5f; // NavMeshAgent movement speed.
 
         // Gets the distance between enemy and waypoint.
         float distance = Vector3.Distance(transform.position, point.position);
@@ -57,13 +56,13 @@ public class Enemy : MonoBehaviour
         #endregion
         if (distance < .5f)
         {
-            if (curTime == 0)
-                curTime = Time.time;
+            if (waitTime == 0)
+                waitTime = Time.time;
 
-            if ((Time.time - curTime) >= pauseDuration)
+            if ((Time.time - waitTime) >= pauseDuration)
             {
                 currentIndex++;
-                curTime = 0;
+                waitTime = 0;
 
                 if (currentIndex >= waypoints.Length)
                 {
@@ -76,15 +75,13 @@ public class Enemy : MonoBehaviour
         // Gets the distance between enemy and player.
         float distToTarget = Vector3.Distance(transform.position, target.position);
 
-        // if statement reads as:
-        /*
-         *  if the distance betweeen enemy/player is less than 5f (seekRadius)...
-         *      switch current State from 'Patrol' to 'Seek' (start pursuing player).
-        */
-        if (distToTarget < seekRadius)
+        if (fov.visibleTargets.Count > 0)
         {
             currentState = State.Seek;
+            target = fov.visibleTargets[0];
         }
+
+        fov.viewRadius = 6f; // FieldOfView arc radius during 'Patrol'.
     }
     #endregion STATE - Patrol
 
@@ -92,20 +89,26 @@ public class Enemy : MonoBehaviour
     // The contained variables for the Seek state (what rules the enemy AI follows when in 'Seek').
     void Seek()
     {
-        agent.SetDestination(target.position); // (NavMeshAgent) agent move to the Transform position of the player.
+        agent.speed = 0f; // Stop moving NavMeshAgent upon spotting player (WORKAROUND FOR STOPPING MOVEMENT)
+        transform.LookAt(target.position); // (NavMeshAgent) agent move to the Transform position of the player.
 
         // Gets the distance between enemy and player.
         float distToTarget = Vector3.Distance(transform.position, target.position);
 
-        // if statement reads as:
-        /*
-         *  if the distance betweeen enemy/player is greater than 5f (seekRadius)...
-         *      switch current State from 'Seek' to 'Patrol' (resume moving from waypoint to waypoint).
-        */
-        if (distToTarget > seekRadius)
+        // Makes AI wait after losing line of sight of the player. 'lookTime' instead of 'waitTime' to ensure AI still waits at next waypoint.
+        if (fov.visibleTargets.Count < 1)
         {
-            currentState = State.Patrol;
+            if (lookTime == 0)
+                lookTime = Time.time;
+
+            if ((Time.time - lookTime) >= pauseDuration)
+            {
+                lookTime = 0;
+                currentState = State.Patrol;
+                target = fov.visibleTargets[0];
+            }
         }
+        fov.viewRadius = 10f; // FieldOfView arc radius during 'Seek'.
     }
     #endregion STATE - Seek
 
